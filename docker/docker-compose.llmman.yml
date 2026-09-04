@@ -1,0 +1,17 @@
+version: "3.9"
+
+# llmman (https://github.com/llmmanorg/llmman) serves the Ollama API on port
+# 17434 as a native binary (no image), so this overlay only lets the api
+# container reach `llmman serve` on the host instead of starting a service.
+#
+#   curl -fsSL https://raw.githubusercontent.com/llmmanorg/llmman/main/install.sh | sh
+#   llmman pull gemma4
+#   llmman serve
+#   hexabot dev --docker --services llmman
+#
+# Then set the Ollama helper's base URL to http://host.docker.internal:17434.
+
+services:
+  api:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
