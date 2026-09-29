@@ -4,7 +4,7 @@ version: "3.9"
 # 17434 as a native binary (no image), so this overlay only lets the api
 # container reach `llmman serve` on the host instead of starting a service.
 #
-#   curl -fsSL https://raw.githubusercontent.com/llmmanorg/llmman/main/install.sh | sh
+#   curl -fsSL https://llmmanorg.github.io/install.sh | sh
 #   llmman pull gemma4
 #   llmman serve
 #   hexabot dev --docker --services llmman
